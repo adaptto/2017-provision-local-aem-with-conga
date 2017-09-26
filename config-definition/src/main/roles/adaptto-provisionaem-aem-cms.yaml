@@ -11,6 +11,18 @@ templateDir: adaptto-provisionaem-aem-cms
 
 files:
 
+# Hotfixes/Service packs
+#- url: mvn:de.provision.aem.hotfix.63/AEM-CFP-6.3.0.2/2.0.0/zip
+#  dir: packages
+
+# AEM Core WCM Components
+- url: mvn:com.adobe.cq/core.wcm.components.all//zip
+  dir: packages
+
+# ACS AEM Commons
+- url: mvn:com.adobe.acs/acs-aem-commons-content//zip/min
+  dir: packages
+
 # AEM OSGi System Configuration
 - file: adaptto-provisionaem-aem-cms-config.provisioning
   dir: packages
@@ -42,11 +54,6 @@ config:
 
   app:
     sampleContent: false
-
-
-  # Example for config override configuration
-  #configOverrides:
-  #  "/path/to/config/scope":
-  #    siteUrl:
-  #    siteUrlSecure:
-  #    siteUrlAuthor:
+    developerMode: false
+    errorPagePaths:
+    - /content/adaptto-provisionaem-sample/:en/error

@@ -62,6 +62,21 @@
       <scope>compile</scope>
     </dependency>
 
+    <!-- 3rdparty packages -->
+    <dependency>
+      <groupId>com.adobe.acs</groupId>
+      <artifactId>acs-aem-commons-content</artifactId>
+      <classifier>min</classifier>
+      <type>zip</type>
+      <scope>compile</scope>
+    </dependency>
+    <dependency>
+      <groupId>com.adobe.cq</groupId>
+      <artifactId>core.wcm.components.all</artifactId>
+      <type>zip</type>
+      <scope>compile</scope>
+    </dependency>
+
   </dependencies>
 
   <build>

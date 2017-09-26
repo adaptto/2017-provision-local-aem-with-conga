@@ -40,8 +40,9 @@
   <build>
     <finalName>${content-package-name}-${project.version}</finalName>
     <resources>
+      <!-- Include all files from jcr_root in content package -->
       <resource>
-        <directory>src/main/content/jcr_root</directory>
+        <directory>jcr_root</directory>
       </resource>
     </resources>
     <plugins>
@@ -53,7 +54,14 @@
         <configuration>
           <name>${content-package-name}</name>
           <group>${content-package-group}</group>
-          <filterSource>src/main/content/META-INF/vault/filter.xml</filterSource>
+          <filters>
+            <filter>
+              <root>/content/adaptto-provisionaem-sample</root>
+            </filter>
+            <filter>
+              <root>/content/dam/adaptto-provisionaem-sample</root>
+            </filter>
+          </filters>
         </configuration>
       </plugin>
 

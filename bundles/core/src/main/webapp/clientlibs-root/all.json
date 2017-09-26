@@ -7,5 +7,9 @@
     "adaptto-provisionaem-sample.jquery",
     "adaptto-provisionaem-sample.bootstrap",
     "adaptto-provisionaem-sample.main"
-  ]
+  ],
+  "jsProcessor": [
+    "default:none",
+    "min:gcc;compilationLevel=whitespace"
+  ]  
 }

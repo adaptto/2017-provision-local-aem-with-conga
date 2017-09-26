@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="cq:Page">
+    <jcr:content
+        cq:contextHubPath="/etc/cloudsettings/default/contexthub"
+        cq:contextHubSegmentsPath="/etc/segmentation/contexthub"
+        cq:template="/apps/adaptto-provisionaem-sample/templates/content"
+        jcr:primaryType="cq:PageContent"
+        jcr:title="Error"
+        sling:resourceType="adaptto-provisionaem-sample/components/page/content"
+        hideInNav="true">
+        <stageTeaser
+            jcr:primaryType="nt:unstructured"
+            jcr:title="Error Pages"
+            sling:resourceType="adaptto-provisionaem-sample/components/content/stageTeaser"
+            buttonCaption="No luck today"/>
+    </jcr:content>
+    <_x0034_04/>
+    <default/>
+</jcr:root>

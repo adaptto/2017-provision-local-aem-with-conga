@@ -6,13 +6,13 @@ nodes:
   roles:
   - role: adaptto-provisionaem-aem-cms
     variant: aem-author
-#  config:
-#    replication.author.publishTargets:
-#    - name: publish1
-#      url: http://localhost:4503
-#      transportUser: admin
-#      # Has to be encrypted with the correct key, see http://www.wemblog.com/2012/03/how-to-use-crypto-support-in-cq55.html
-#      transportPassword: "{44704fe8b2e168e63bf1453db0c32b06d2f41be1ed7264c53ffecc5dcdf44e83}"
+  config:
+    replication.author.publishTargets:
+    - name: publish1
+      url: http://localhost:4503
+      transportUser: admin
+      # Should be encrypted with the correct key, see http://www.wemblog.com/2012/03/how-to-use-crypto-support-in-cq55.html
+      transportPassword: "admin"
 
 - node: aem-publish
   roles:
@@ -21,4 +21,11 @@ nodes:
 
 config:
   contentPackage.group: adaptto-provisionaem-aem
-  app.sampleContent: true
+  app:
+    sampleContent: true
+    developerMode: true
+    errorPagePaths:
+    - /content/adaptto-provisionaem-sample/:en/error
+  quickstart:
+    # Enable Apache Sling DavEx Servlet to be able to use CRXDE Lite
+    enableDavEx: true

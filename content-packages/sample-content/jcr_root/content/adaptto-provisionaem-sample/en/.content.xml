@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="cq:Page">
+    <jcr:content
+        cq:designPath="/etc/designs/adaptto-provisionaem-sample/default"
+        cq:template="/apps/adaptto-provisionaem-sample/templates/content"
+        jcr:primaryType="cq:PageContent"
+        jcr:title="Home"
+        sling:resourceType="adaptto-provisionaem-sample/components/page/content">
+        <image jcr:primaryType="nt:unstructured"/>
+        <content
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="wcm/foundation/components/responsivegrid">
+            <contentteaser
+                jcr:primaryType="nt:unstructured"
+                jcr:title="The Location"
+                sling:resourceType="adaptto-provisionaem-sample/components/content/contentTeaser"
+                buttonCaption="Find It!"
+                fileReference="/content/dam/adaptto-provisionaem-sample/image1.jpg"
+                text="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente esse necessitatibus neque."/>
+            <contentteaser_451182759
+                jcr:primaryType="nt:unstructured"
+                jcr:title="The Sessions"
+                sling:resourceType="adaptto-provisionaem-sample/components/content/contentTeaser"
+                buttonCaption="See It!"
+                fileReference="/content/dam/adaptto-provisionaem-sample/image2.jpg"
+                text="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente esse necessitatibus neque."/>
+            <contentteaser_151591
+                jcr:primaryType="nt:unstructured"
+                jcr:title="The Food"
+                sling:resourceType="adaptto-provisionaem-sample/components/content/contentTeaser"
+                buttonCaption="Eat It!"
+                fileReference="/content/dam/adaptto-provisionaem-sample/image3.jpg"
+                text="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente esse necessitatibus neque."/>
+            <contentteaser_1700280127
+                jcr:primaryType="nt:unstructured"
+                jcr:title="The Community"
+                sling:resourceType="adaptto-provisionaem-sample/components/content/contentTeaser"
+                buttonCaption="Feel It!"
+                fileReference="/content/dam/adaptto-provisionaem-sample/image4.jpg"
+                text="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente esse necessitatibus neque."/>
+        </content>
+        <stageTeaser
+            jcr:primaryType="nt:unstructured"
+            jcr:title="A Warm Welcome!"
+            sling:resourceType="adaptto-provisionaem-sample/components/content/stageTeaser"
+            buttonCaption="Call to action!"
+            text="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa, ipsam, eligendi, in quo sunt possimus non incidunt odit vero aliquid similique quaerat nam nobis illo aspernatur vitae fugiat numquam repellat."/>
+    </jcr:content>
+    <about/>
+    <services/>
+    <contact/>
+    <error/>
+</jcr:root>

@@ -53,6 +53,12 @@
 
   <build>
     <finalName>${content-package-name}-${project.version}</finalName>
+    <resources>
+      <!-- Include all files from jcr_root in content package -->
+      <resource>
+        <directory>jcr_root</directory>
+      </resource>
+    </resources>
     <plugins>
 
       <plugin>
@@ -65,6 +71,9 @@
           <filters>
             <filter>
               <root>/apps/${content-package-name}</root>
+            </filter>
+            <filter>
+              <root>/apps/sling/servlet/errorhandler</root>
             </filter>
           </filters>
         </configuration>

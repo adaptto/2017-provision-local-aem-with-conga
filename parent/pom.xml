@@ -53,6 +53,34 @@
         <scope>import</scope>
       </dependency>
 
+      <!-- AEM Core WCM Components -->
+      <dependency>
+        <groupId>com.adobe.cq</groupId>
+        <artifactId>core.wcm.components.core</artifactId>
+        <!-- stick with version 1.0.2 for this demo to be compatible with sample content from AEM 6.3 -->
+        <version>1.0.2</version>
+      </dependency>
+      <dependency>
+        <groupId>com.adobe.cq</groupId>
+        <artifactId>core.wcm.components.all</artifactId>
+        <version>1.0.2</version>
+        <type>zip</type>
+      </dependency>
+
+      <!-- ACS AEM Commons -->
+      <dependency>
+        <groupId>com.adobe.acs</groupId>
+        <artifactId>acs-aem-commons-bundle</artifactId>
+        <version>3.9.0</version>
+      </dependency>
+      <dependency>
+        <groupId>com.adobe.acs</groupId>
+        <artifactId>acs-aem-commons-content</artifactId>
+        <version>3.9.0</version>
+        <classifier>min</classifier>
+        <type>zip</type>
+      </dependency>
+
     </dependencies>
   </dependencyManagement>
   

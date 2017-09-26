@@ -3,29 +3,31 @@
 
 [configurations]
 
-  # Configure Sling Context-Aware Configuration for AEM - add lookup in jcr:content subnodes, ignore cq:* properties
-  org.apache.sling.caconfig.resource.impl.def.DefaultContextPathStrategy
-    configRefResourceNames=["jcr:content"]
-  
-  org.apache.sling.caconfig.management.impl.ConfigurationManagementSettingsImpl
-    ignorePropertyNameRegex=["^(jcr|cq):.+$"]
+  # Default LogManager configuration
+  org.apache.sling.commons.log.LogManager
+    org.apache.sling.commons.log.pattern="{0,date,dd.MM.yyyy\ HH:mm:ss.SSS}\ *{4}*\ [{2}]\ {3}\ {5}"
+    org.apache.sling.commons.log.file="logs/error.log"
+    org.apache.sling.commons.log.level="warn"
+    org.apache.sling.commons.log.file.size="'.'yyyy-MM-dd"
+    org.apache.sling.commons.log.file.number=I"15"
 
-  # Example for config override
-  org.apache.sling.caconfig.impl.override.OsgiConfigurationOverrideProvider-caconfig-sample
-    description="Override\ Example"
-    overrides=["[/content/adaptto-provisionaem/en/sub-page/sub-page-override]org.adaptto.caconfig.aem.config.ConfigSample\={\"stringParam\":\"override-stringParam\",\"intParam\":999}"]
+  # Set loglevel for project-specific bundles
+  org.apache.sling.commons.log.LogManager.factory.config-projectspecific
+    org.apache.sling.commons.log.file="logs/error.log"
+    org.apache.sling.commons.log.level="warn"
+    org.apache.sling.commons.log.names=["org.adaptto.provisionaem","com.adobe.acs.commons"]
+    org.apache.sling.commons.log.pattern="{0,date,dd.MM.yyyy\ HH:mm:ss.SSS}\ *{4}*\ [{2}]\ {3}\ {5}"
+
+  # Configure ASC Commons Error Page Handler
+  com.adobe.acs.commons.errorpagehandler.impl.ErrorPageHandlerImpl
     enabled=B"true"
+    paths=[{{#each app.errorPagePaths}}"{{this}}",{{/each}}]
 
-  # Enable AEM Page peristence strategy
-  io.wcm.caconfig.extensions.persistence.impl.PagePersistenceStrategy
-    enabled=B"true"
-
-  # Absolute Parent Root Path Strategy
-  io.wcm.caconfig.extensions.contextpath.impl.AbsoluteParentContextPathStrategy-example
-    levels=I["2","3","4"]
-    contextPathRegex="^/content(/.+)$"
-    contextPathBlacklistRegex="^.*/config(/.+)?$"
-    configPathPatterns=["/conf$1"]
+{{#if app.developerMode}}
+  # Enable developer mode filter
+  com.day.cq.wcm.core.impl.WCMDeveloperModeFilter
+    wcmdevmodefilter.enabled=B"true"
+{{/if}}
 
 
 [configurations runModes=author]
@@ -36,6 +38,17 @@
   
 
 [configurations runModes=publish]
+  
+  # Disable built-in JSON and XML access features for resources
+  org.apache.sling.servlets.get.DefaultGetServlet
+    enable.html=B"false"
+    enable.json=B"false"
+    enable.txt=B"false"
+    enable.xml=B"false"
+    index=B"false"
+    index.files="[index,index.html]"
+    aliases="xml:pdf"
+    json.maximumresults=I"1000"
   
   # Disable Configuration Editor on publish
   io.wcm.caconfig.editor.impl.EditorConfig
