@@ -1,0 +1,52 @@
+# AEM Sample Application
+
+inherits:
+- role: aem-cms
+
+variants:
+- variant: aem-author
+- variant: aem-publish
+
+templateDir: adaptto-provisionaem-aem-cms
+
+files:
+
+# AEM OSGi System Configuration
+- file: adaptto-provisionaem-aem-cms-config.provisioning
+  dir: packages
+  template: adaptto-provisionaem-aem-cms-config.provisioning.hbs
+  postProcessors:
+  - aem-contentpackage-osgiconfig
+  postProcessorOptions:
+    contentPackage:
+      name: adaptto-provisionaem-aem-cms-config
+      rootPath: /apps/adaptto-provisionaem-aem-cms-config/config
+      filters:
+      - filter: /apps/adaptto-provisionaem-aem-cms-config
+
+# Application package
+- url: mvn:org.adaptto.provisionaem/org.adaptto.provisionaem.complete//zip
+  dir: packages
+
+# Application sample content package
+- url: mvn:org.adaptto.provisionaem/org.adaptto.provisionaem.sample-content//zip
+  dir: packages
+  condition: ${app.sampleContent}
+
+
+# Defines configuration parameters and default values
+config:
+  contentPackage:
+    group: adaptto-provisionaem
+    version: "${version}"
+
+  app:
+    sampleContent: false
+
+
+  # Example for config override configuration
+  #configOverrides:
+  #  "/path/to/config/scope":
+  #    siteUrl:
+  #    siteUrlSecure:
+  #    siteUrlAuthor:
