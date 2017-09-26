@@ -1,0 +1,14 @@
+{
+  "jcr:primaryType": "cq:Template",
+  "jcr:title": "adaptTo() FSResource Sample",
+  "jcr:description": "Static content template.",
+
+  "allowedPaths": ["/content/adaptto-provisionaem-sample(/.+)?"],
+  "ranking": 100,
+  
+  "jcr:content": {
+    "jcr:primaryType": "cq:PageContent",
+    "sling:resourceType": "adaptto-provisionaem-sample/components/page/content"
+  }
+
+}

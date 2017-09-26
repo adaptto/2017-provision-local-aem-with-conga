@@ -1,0 +1,53 @@
+{
+  "jcr:primaryType": "cq:Component",
+  "jcr:title": "Stage Teaser",
+  "componentGroup": "adaptto-provisionaem-sample",
+  "cq:icon": "text",
+
+  "cq:editConfig": {
+    "jcr:primaryType": "cq:EditConfig"
+  },
+  
+  "cq:htmlTag": {
+    "cq:tagName": "header",
+    "class": "jumbotron my-4"
+  },
+
+  "cq:dialog": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "cq/gui/components/authoring/dialog",
+    "jcr:title": "Stage Teaser",
+    "content": {
+      "sling:resourceType": "granite/ui/components/foundation/container",
+      "layout": {
+        "sling:resourceType": "granite/ui/components/foundation/layouts/fixedcolumns"
+      },
+      "items": {
+        "column": {
+          "sling:resourceType": "granite/ui/components/foundation/container",
+          "items": {
+
+            "title": {
+              "sling:resourceType": "granite/ui/components/foundation/form/textfield",
+              "name": "./jcr:title",
+              "fieldLabel": "Title"
+            },
+            "text": {
+              "sling:resourceType": "granite/ui/components/foundation/form/textarea",
+              "name": "./text",
+              "fieldLabel": "Text",
+              "rows": 5
+            },
+            "buttonCaption": {
+              "sling:resourceType": "granite/ui/components/foundation/form/textfield",
+              "name": "./buttonCaption",
+              "fieldLabel": "Button Caption"
+            }
+
+          }
+        }
+      }
+    }
+  }
+
+}

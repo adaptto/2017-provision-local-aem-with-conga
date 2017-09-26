@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:exif="http://ns.adobe.com/exif/1.0/" xmlns:photoshop="http://ns.adobe.com/photoshop/1.0/" xmlns:tiff="http://ns.adobe.com/tiff/1.0/" xmlns:xmp="http://ns.adobe.com/xap/1.0/" xmlns:xmpMM="http://ns.adobe.com/xap/1.0/mm/" xmlns:stEvt="http://ns.adobe.com/xap/1.0/sType/ResourceEvent#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dam="http://www.day.com/dam/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="dam:Asset">
+    <jcr:content jcr:primaryType="dam:AssetContent">
+        <metadata
+            dam:Bitsperpixel="{Long}24"
+            dam:ColorSpace="{Long}-1"
+            dam:ExifOffset="{Long}236"
+            dam:Fileformat="JPEG"
+            dam:JpgFromRawLength="{Long}8295"
+            dam:JpgFromRawStart="{Long}386"
+            dam:MIMEtype="image/jpeg"
+            dam:Numberofimages="{Long}1"
+            dam:Numberoftextualcomments="{Long}0"
+            dam:Physicalheightindpi="{Long}4"
+            dam:Physicalheightininches="{Decimal}84.85639953613281"
+            dam:Physicalwidthindpi="{Long}4"
+            dam:Physicalwidthininches="{Decimal}130.54830932617188"
+            dam:Progressive="no"
+            dam:size="{Long}105367"
+            dc:format="image/jpeg"
+            exif:ExifImageLength="{Long}325"
+            exif:ExifImageWidth="{Long}500"
+            exif:PixelXDimension="{Long}72"
+            exif:PixelYDimension="{Long}72"
+            jcr:primaryType="nt:unstructured"
+            photoshop:ColorMode="{Long}3"
+            photoshop:ICCProfile=""
+            tiff:BitsPerSample="\[S@10240195"
+            tiff:Compression="{Long}6"
+            tiff:ImageLength="{Long}325"
+            tiff:ImageWidth="{Long}500"
+            tiff:Orientation="{Long}1"
+            tiff:PhotometricInterpretation="{Long}2"
+            tiff:ResolutionUnit="{Long}2"
+            tiff:SamplesPerPixel="{Long}3"
+            tiff:XResolution="72"
+            tiff:YResolution="72"
+            xmp:CreateDate="{Date}2017-09-20T14:24:32.000+02:00"
+            xmp:CreatorTool="Adobe Photoshop CC 2017 (Windows)"
+            xmp:MetadataDate="{Date}2017-09-20T14:27:49.000+02:00"
+            xmp:ModifyDate="{Date}2017-09-20T14:27:49.000+02:00"
+            xmpMM:DocumentID="22D658BBEE555201E8CD521B8044245F"
+            xmpMM:InstanceID="xmp.iid:d8a5d481-20cb-7c4f-83cb-dd28531962e6"
+            xmpMM:OriginalDocumentID="22D658BBEE555201E8CD521B8044245F">
+            <xmpMM:History
+                jcr:primaryType="nt:unstructured"
+                xmpArraySize="{Long}1"
+                xmpArrayType="rdf:Seq"
+                xmpNodeType="xmpArray">
+                <_x0031_
+                    jcr:primaryType="nt:unstructured"
+                    stEvt:action="saved"
+                    stEvt:changed="/"
+                    stEvt:instanceID="xmp.iid:d8a5d481-20cb-7c4f-83cb-dd28531962e6"
+                    stEvt:softwareAgent="Adobe Photoshop CC 2017 (Windows)"
+                    stEvt:when="{Date}2017-09-20T14:27:49.000+02:00"
+                    xmpNodeType="xmpStruct"/>
+            </xmpMM:History>
+        </metadata>
+        <related jcr:primaryType="nt:unstructured"/>
+    </jcr:content>
+</jcr:root>

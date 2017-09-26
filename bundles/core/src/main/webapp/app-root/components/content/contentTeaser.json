@@ -1,0 +1,58 @@
+{
+  "jcr:primaryType": "cq:Component",
+  "jcr:title": "Content Teaser",
+  "componentGroup": "adaptto-provisionaem-sample",
+  "cq:icon": "imageText",
+
+  "cq:editConfig": {
+    "jcr:primaryType": "cq:EditConfig"
+  },
+  
+  "cq:htmlTag": {
+    "class": "col-lg-3 col-md-6 mb-4"
+  },
+
+  "cq:dialog": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "cq/gui/components/authoring/dialog",
+    "jcr:title": "Content Teaser",
+    "content": {
+      "sling:resourceType": "granite/ui/components/foundation/container",
+      "layout": {
+        "sling:resourceType": "granite/ui/components/foundation/layouts/fixedcolumns"
+      },
+      "items": {
+        "column": {
+          "sling:resourceType": "granite/ui/components/foundation/container",
+          "items": {
+
+            "fileReference": {
+              "sling:resourceType": "granite/ui/components/foundation/form/pathbrowser",
+              "name": "./fileReference",
+              "fieldLabel": "Image Asset",
+              "rootPath": "/content/dam"
+            },
+            "title": {
+              "sling:resourceType": "granite/ui/components/foundation/form/textfield",
+              "name": "./jcr:title",
+              "fieldLabel": "Title"
+            },
+            "text": {
+              "sling:resourceType": "granite/ui/components/foundation/form/textarea",
+              "name": "./text",
+              "fieldLabel": "Text",
+              "rows": 3
+            },
+            "buttonCaption": {
+              "sling:resourceType": "granite/ui/components/foundation/form/textfield",
+              "name": "./buttonCaption",
+              "fieldLabel": "Button Caption"
+            }
+
+          }
+        }
+      }
+    }
+  }
+
+}

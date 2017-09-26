@@ -1,0 +1,22 @@
+<!-- Navigation -->
+<div data-sly-resource="${'.' @ resourceType='adaptto-provisionaem-sample/components/structure/navigation'}"></div>
+
+<!-- Page Content -->
+<div class="container">
+
+  <!-- Stage Teaser -->
+  <div data-sly-resource="${'stageTeaser' @ resourceType='adaptto-provisionaem-sample/components/content/stageTeaser'}"></div>
+
+  <!-- Content Teasers -->
+  <div class="row text-center" data-sly-resource="${'content' @ resourceType='foundation/components/parsys'}"></div>
+
+</div>
+
+<!-- Footer -->
+<footer class="py-5 bg-dark">
+  <div class="container">
+    <p class="m-0 text-center text-white">Copyright ® 2017 pro!vision GmbH</p>
+  </div>
+</footer>
+
+<sly data-sly-include="customfooterlibs.html" />

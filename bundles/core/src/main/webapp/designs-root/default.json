@@ -1,0 +1,18 @@
+{
+  "jcr:primaryType": "cq:Page",
+  "jcr:content": {
+    "jcr:primaryType": "cq:PageContent",
+    "sling:resourceType": "wcm/core/components/designer",
+    "jcr:title": "adaptTo() FSResource Sample Design",
+    "cq:template": "/libs/wcm/core/templates/designpage",
+    "cq:doctype": "html_5",
+    "content": {
+
+      "content": {
+        "sling:resourceType": "foundation/components/parsys",
+        "components": "/apps/adaptto-provisionaem-sample/components/content/contentTeaser"
+      }
+    }
+
+  }
+}
