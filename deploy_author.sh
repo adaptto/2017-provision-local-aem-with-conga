@@ -4,22 +4,13 @@
 sling_url="http://localhost:4502"
 sling_user="admin"
 sling_password="admin"
-sling_params=""
 conga_node="aem-author"
-
-# set parameter variables before run
-init()
-{
-sling_params="-Dsling.url=$sling_url -Dsling.user=$sling_user -Dsling.password=$sling_password"
-}
 
 ####
 
-# run modes
 default_build()
 {
     motd
-    init
     clean_install
     deploy_artifacts
 }
@@ -33,8 +24,8 @@ echo ""
 echo " Cleans and installs all modules"
 echo " Uploads and installs application complete packages, config and sample content"
 echo ""
-echo " Destination: $sling_url"
-echo " CONGA Node:  $conga_node"
+echo " Destinations:"
+echo " - $conga_node: $sling_url"
 echo ""
 echo "********************************************************************"
 }
@@ -47,7 +38,7 @@ echo ""
 echo "*** Build artifacts ***"
 echo ""
 
-mvn $sling_params -Pfast clean install eclipse:eclipse
+mvn clean install eclipse:eclipse
 
 if [ "$?" -ne "0" ]; then
   error_exit "*** Build artifacts FAILED ***"
@@ -60,11 +51,14 @@ deploy_artifacts()
 {
 
 echo ""
-echo "*** Deploy AEM packages  ***"
+echo "*** Deploy AEM packages (author)  ***"
 echo ""
 
 cd config-definition
-mvn -B $sling_params -Dconga.nodeDirectory=target/configuration/development/$conga_node conga-aem:package-install
+mvn -B -Dsling.url=$sling_url \
+   -Dsling.user=$sling_user -Dsling.password=$sling_password \
+   -Dconga.nodeDirectory=target/configuration/development/$conga_node \
+   conga-aem:package-install
 
 if [ "$?" -ne "0" ]; then
   error_exit "*** Deploying AEM packages FAILED ***"

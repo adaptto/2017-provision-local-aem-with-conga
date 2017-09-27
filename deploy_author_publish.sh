@@ -1,25 +1,18 @@
 #!/bin/sh
 
 # defaultconfig
-sling_url="http://localhost:4503"
+sling_url_author="http://localhost:4502"
+sling_url_publish="http://localhost:4503"
 sling_user="admin"
 sling_password="admin"
-sling_params=""
-conga_node="aem-publish"
-
-# set parameter variables before run
-init()
-{
-sling_params="-Dsling.url=$sling_url -Dsling.user=$sling_user -Dsling.password=$sling_password"
-}
+conga_node_author="aem-author"
+conga_node_publish="aem-publish"
 
 ####
 
-# run modes
 default_build()
 {
     motd
-    init
     clean_install
     deploy_artifacts
 }
@@ -33,8 +26,9 @@ echo ""
 echo " Cleans and installs all modules"
 echo " Uploads and installs application complete packages, config and sample content"
 echo ""
-echo " Destination: $sling_url"
-echo " CONGA Node:  $conga_node"
+echo " Destinations:"
+echo " - $conga_node_author: $sling_url_author"
+echo " - $conga_node_publish: $sling_url_publish"
 echo ""
 echo "********************************************************************"
 }
@@ -47,7 +41,7 @@ echo ""
 echo "*** Build artifacts ***"
 echo ""
 
-mvn $sling_params -Pfast clean install eclipse:eclipse
+mvn clean install eclipse:eclipse
 
 if [ "$?" -ne "0" ]; then
   error_exit "*** Build artifacts FAILED ***"
@@ -60,11 +54,30 @@ deploy_artifacts()
 {
 
 echo ""
-echo "*** Deploy AEM packages  ***"
+echo "*** Deploy AEM packages (author)  ***"
 echo ""
 
 cd config-definition
-mvn -B $sling_params -Dconga.nodeDirectory=target/configuration/development/$conga_node conga-aem:package-install
+mvn -B -Dsling.url=$sling_url_author \
+   -Dsling.user=$sling_user -Dsling.password=$sling_password \
+   -Dconga.nodeDirectory=target/configuration/development/$conga_node_author \
+   conga-aem:package-install
+
+if [ "$?" -ne "0" ]; then
+  error_exit "*** Deploying AEM packages FAILED ***"
+fi
+
+cd ../
+
+echo ""
+echo "*** Deploy AEM packages (publish)  ***"
+echo ""
+
+cd config-definition
+mvn -B -Dsling.url=$sling_url_publish \
+   -Dsling.user=$sling_user -Dsling.password=$sling_password \
+   -Dconga.nodeDirectory=target/configuration/development/$conga_node_publish \
+   conga-aem:package-install
 
 if [ "$?" -ne "0" ]; then
   error_exit "*** Deploying AEM packages FAILED ***"
