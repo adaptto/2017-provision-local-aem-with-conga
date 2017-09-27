@@ -1,0 +1,11 @@
+{{!--
+  Set languages for AEM translator tool.
+--}}
+{
+  "jcr:primaryType": "nt:unstructured",
+  "languages": [
+{{#each translator.languages}}
+  "{{this}}"{{#unless @last}},{{/unless}}
+{{/each}}
+  ]
+}

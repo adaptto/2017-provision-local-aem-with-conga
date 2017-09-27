@@ -21,6 +21,11 @@ nodes:
 
 config:
   contentPackage.group: adaptto-provisionaem-aem
+
+  quickstart:
+    # Enable Apache Sling DavEx Servlet to be able to use CRXDE Lite
+    enableDavEx: true
+
   app:
     # Deploy Sample Content to instances
     sampleContent: true
@@ -29,6 +34,10 @@ config:
     # Configuration for ACS Commons Error Handler
     errorPagePaths:
     - /content/adaptto-provisionaem-sample/:en/error
-  quickstart:
-    # Enable Apache Sling DavEx Servlet to be able to use CRXDE Lite
-    enableDavEx: true
+
+  # Configure languages displayed in AEM content translator
+  translator.languages:
+  - de
+  - en
+  - fr
+  - it

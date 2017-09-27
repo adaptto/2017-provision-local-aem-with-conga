@@ -27,7 +27,7 @@ files:
 # AEM OSGi System Configuration
 - file: adaptto-provisionaem-aem-cms-config.provisioning
   dir: packages
-  template: adaptto-provisionaem-aem-cms-config.provisioning.hbs
+  template: cms-config.provisioning.hbs
   postProcessors:
   - aem-contentpackage-osgiconfig
   postProcessorOptions:
@@ -36,6 +36,19 @@ files:
       rootPath: /apps/adaptto-provisionaem-aem-cms-config/config
       filters:
       - filter: /apps/adaptto-provisionaem-aem-cms-config
+
+# AEM translator languages
+- file: adaptto-provisionaem-aem-cms-author-translator-languages.json
+  dir: packages
+  template: cms-author-translator-languages.json.hbs
+  variants:
+  - aem-author
+  postProcessors:
+  - aem-contentpackage
+  postProcessorOptions:
+    contentPackage:
+      name: adaptto-provisionaem-aem-cms-author-translator-language
+      rootPath: /etc/languages
 
 # Application package
 - url: mvn:org.adaptto.provisionaem/org.adaptto.provisionaem.complete//zip
@@ -61,3 +74,12 @@ config:
     # Configuration for ACS Commons Error Handler
     errorPagePaths:
     - /content/adaptto-provisionaem-sample/:en/error
+
+  # Log levels
+  log:
+    projectSpecificLogLevel: warn
+
+  # Configure languages displayed in AEM content translator
+  translator.languages:
+  - de
+  - en
