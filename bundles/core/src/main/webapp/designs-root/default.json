@@ -3,7 +3,7 @@
   "jcr:content": {
     "jcr:primaryType": "cq:PageContent",
     "sling:resourceType": "wcm/core/components/designer",
-    "jcr:title": "adaptTo() Provision Local AEM Sample Design",
+    "jcr:title": "adaptTo() Provisioning Local AEM Sample Design",
     "cq:template": "/libs/wcm/core/templates/designpage",
     "cq:doctype": "html_5",
     "content": {

@@ -1,5 +1,6 @@
 # AEM Sample Application
 
+# Inherit default AEM functionality from "AEM Definitions", see http://devops.wcm.io/conga/definitions/aem/
 inherits:
 - role: aem-cms
 
@@ -11,15 +12,15 @@ templateDir: adaptto-provisionaem-aem-cms
 
 files:
 
-# Hotfixes/Service packs
+# Example for deploying Hotfixes/Service packs (you have to upload them yourself to your Maven Repository)
 #- url: mvn:de.provision.aem.hotfix.63/AEM-CFP-6.3.0.2/2.0.0/zip
 #  dir: packages
 
-# AEM Core WCM Components
+# AEM Core WCM Components (version defined in POMs)
 - url: mvn:com.adobe.cq/core.wcm.components.all//zip
   dir: packages
 
-# ACS AEM Commons
+# ACS AEM Commons (version defined in POMs)
 - url: mvn:com.adobe.acs/acs-aem-commons-content//zip/min
   dir: packages
 
@@ -40,7 +41,7 @@ files:
 - url: mvn:org.adaptto.provisionaem/org.adaptto.provisionaem.complete//zip
   dir: packages
 
-# Application sample content package
+# Application sample content package (only when sample content is enabled)
 - url: mvn:org.adaptto.provisionaem/org.adaptto.provisionaem.sample-content//zip
   dir: packages
   condition: ${app.sampleContent}
@@ -53,7 +54,10 @@ config:
     version: "${version}"
 
   app:
+    # Deploy Sample Content to instances
     sampleContent: false
+    # Enable Deveoper Mode
     developerMode: false
+    # Configuration for ACS Commons Error Handler
     errorPagePaths:
     - /content/adaptto-provisionaem-sample/:en/error

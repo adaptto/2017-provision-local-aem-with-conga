@@ -1,6 +1,6 @@
 {
   "jcr:primaryType": "cq:Template",
-  "jcr:title": "adaptTo() Provision Local AEM Sample",
+  "jcr:title": "adaptTo() Provisioning Local AEM Sample",
   "jcr:description": "Static content template.",
 
   "allowedPaths": ["/content/adaptto-provisionaem-sample(/.+)?"],

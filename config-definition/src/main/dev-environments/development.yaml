@@ -1,4 +1,4 @@
-# Local AEM configuration for Development Environment
+# AEM configuration for local Development Environment
 
 nodes:
 
@@ -22,8 +22,11 @@ nodes:
 config:
   contentPackage.group: adaptto-provisionaem-aem
   app:
+    # Deploy Sample Content to instances
     sampleContent: true
+    # Enable Deveoper Mode
     developerMode: true
+    # Configuration for ACS Commons Error Handler
     errorPagePaths:
     - /content/adaptto-provisionaem-sample/:en/error
   quickstart:

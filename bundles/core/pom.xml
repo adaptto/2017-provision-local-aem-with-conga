@@ -32,7 +32,7 @@
   <version>1.0.0-SNAPSHOT</version>
   <packaging>bundle</packaging>
   
-  <name>adaptTo() 2017 Provision Local AEM Sample</name>
+  <name>adaptTo() 2017 Provisioning Local AEM Sample</name>
 
   <dependencies>
 
