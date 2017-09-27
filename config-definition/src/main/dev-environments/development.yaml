@@ -31,6 +31,8 @@ config:
     sampleContent: true
     # Enable Deveoper Mode
     developerMode: true
+    # Default entry point on publish
+    publishRootMapping: /content/adaptto-provisionaem-sample/en.html
     # Configuration for ACS Commons Error Handler
     errorPagePaths:
     - /content/adaptto-provisionaem-sample/:en/error

@@ -71,12 +71,15 @@ config:
     sampleContent: false
     # Enable Deveoper Mode
     developerMode: false
+    # Default entry point on publish
+    publishRootMapping:
     # Configuration for ACS Commons Error Handler
     errorPagePaths:
     - /content/adaptto-provisionaem-sample/:en/error
 
   # Log levels
   log:
+    globalLogLevel: error
     projectSpecificLogLevel: warn
 
   # Configure languages displayed in AEM content translator
